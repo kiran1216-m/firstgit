@@ -4,12 +4,11 @@ pipeline{
         stage('fetching stage'){
           steps{
             git branch: 'main', url: 'https://github.com/kiran1216-m/maven_cont.git'
-            echo 'fetching the code from github'
                 }
              }
-        stage('second stage'){
+        stage('build stage'){
           steps{
-            echo 'this is a build stage'
+            build 'maven'
                }
              }
         stage('third stage'){
